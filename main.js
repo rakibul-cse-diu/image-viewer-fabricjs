@@ -15,6 +15,8 @@ const inputFile = document.getElementById('myImg');
 reader.addEventListener("load", () => {
     fabric.Image.fromURL(reader.result, img => {
         canvas.add(img)
+        canvas.centerObject(img)
+        console.log(img)
         canvas.requestRenderAll()
     })
 })
@@ -28,7 +30,7 @@ const imgAdded = (e) => {
     clearCanvas(canvas)
     const inputElem = document.getElementById('myImg')
     const file = inputElem.files[0];
-    reader.readAsDataURL(file)
+    reader.readAsDataURL(file);
 
     // Zoom in & Zoom out function by chnaging mouse wheel
     canvas.on('mouse:wheel', function (opt) {
@@ -37,7 +39,9 @@ const imgAdded = (e) => {
         zoom *= 0.999 ** delta;
         if (zoom > 20) zoom = 20;
         if (zoom < 0.01) zoom = 0.01;
-        canvas.setZoom(zoom);
+        // canvas.setZoom(zoom);
+        canvas.zoomToPoint({ x: opt.e.offsetX, y: opt.e.offsetY }, zoom);
+        canvas.centerObject(opt.target)
         opt.e.preventDefault();
         opt.e.stopPropagation();
         canvas.renderAll();
