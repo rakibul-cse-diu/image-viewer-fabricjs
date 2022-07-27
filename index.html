@@ -5,16 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Viwer by FabricJS</title>
+    <title>Image Viewer by FabricJS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <section class="container">
+        <div class="topbar-container">
+            <div class="topbar-intro">
+                <img class="application-icon" src="./assets/icon/apps.png" alt="">
+                <h3 class="application-title">Image Viewer</h3>
+            </div>
+            <div class="application-action">
+                <label for="myImg" class="custom-file-upload"> Upload Image
+                    <input id="myImg" type="file" accept="image/*">
+                </label>
+            </div>
+        </div>
+        <div></div>
+    </section>
 
 
     <!-- Script -->
     <script src="./main.js"></script>
-    <script src=""></script>
+    <script src="./lib/fabric.min.js"></script>
 </body>
 
 </html>
