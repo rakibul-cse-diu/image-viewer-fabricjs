@@ -11,9 +11,6 @@ const canvas = initCanvas('canvas');
 const reader = new FileReader();
 const inputFile = document.getElementById('myImg');
 
-// Upload Image Listener 
-inputFile.addEventListener('change', imgAdded);
-
 // Render image in canvas
 reader.addEventListener("load", () => {
     fabric.Image.fromURL(reader.result, img => {
@@ -47,6 +44,9 @@ const imgAdded = (e) => {
     });
 }
 
+// Upload Image Listener 
+inputFile.addEventListener('change', imgAdded);
+
 
 // Clear the canvas
 const clearCanvas = (canvas) => {
@@ -56,4 +56,3 @@ const clearCanvas = (canvas) => {
         }
     })
 }
-
