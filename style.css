@@ -11,11 +11,12 @@
 body {
     background-color: #363742;
     backdrop-filter: blur(8px);
-    padding: 10% 20%;
+    padding: 2% 20%;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #262730;
@@ -53,4 +54,23 @@ input[type="file"] {
     padding: 6px 12px;
     background-color: #1BE4C9;
     cursor: pointer;
+}
+
+.canvas-container {
+    width: 100%;
+    display: flex;
+    padding: 0 0 0 42px;
+}
+
+.canvas-action {
+    width: 150px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.action-intro {
+    color: #6546C2;
+    margin-top: 5px;
 }
